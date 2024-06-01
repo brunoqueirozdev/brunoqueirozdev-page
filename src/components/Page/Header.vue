@@ -1,7 +1,12 @@
 <template>
-    <div>
-        <Language />
-        <DarkMode />
+    <div class="flex justify-between">
+        <div class="flex border border-black">
+            <Language />
+        </div>
+
+        <div class="flex border border-black">
+            <DarkMode />
+        </div>
     </div>
 </template>
 

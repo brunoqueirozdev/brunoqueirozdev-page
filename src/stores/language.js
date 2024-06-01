@@ -1,12 +1,20 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
-  }
+export const useLanguageStore = defineStore('language', () => {
+    const currentLang = ref('br')
 
-  return { count, doubleCount, increment }
+    function updateLanguage(newLang) {
+        if (newLang === currentLang.value) {
+            return
+        }
+
+        currentLang.value = newLang
+    }
+
+    function getCurrentLanguage() {
+        return currentLang.value
+    }
+
+    return { updateLanguage, getCurrentLanguage }
 })
