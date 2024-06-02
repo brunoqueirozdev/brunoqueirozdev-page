@@ -1,5 +1,6 @@
 <template>
-    <select id="language" @change="updateLanguage">
+    <select id="language" @change="updateLanguage" class="bg-gray-200 rounded-md p-2"
+        :class="{ 'dark-mode': $darkmode.isDarkmode }">
         <option value="br" :selected="current === 'br'">Português</option>
         <option value="en" :selected="current === 'en'">English</option>
     </select>

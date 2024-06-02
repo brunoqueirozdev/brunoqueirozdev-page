@@ -1,13 +1,15 @@
 <template>
-    <div class="flex justify-between">
-        <div class="flex border border-black">
-            <Language />
+    <header :class="{ 'dark-mode': $darkmode.isDarkmode }" class="p-4">
+        <div class="flex justify-between">
+            <div class="flex">
+                <Language />
+            </div>
+            
+            <div class="flex">
+                <DarkMode />
+            </div>
         </div>
-
-        <div class="flex border border-black">
-            <DarkMode />
-        </div>
-    </div>
+    </header>
 </template>
 
 <script>

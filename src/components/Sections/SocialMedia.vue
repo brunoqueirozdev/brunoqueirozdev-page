@@ -1,9 +1,20 @@
 <template>
-    <div>
-        <Whatsapp />
-        <Email />
-        <Github />
-        <Linkedin />
+    <div class="flex justify-around text-[2rem] my-4 items-center">
+        <div class="flex hover:opacity-70 cursor-pointer">
+            <Whatsapp />
+        </div>
+
+        <div class="flex hover:opacity-70 cursor-pointer">
+            <Email />
+        </div>
+
+        <div class="flex hover:opacity-70 cursor-pointer">
+            <Github />
+        </div>
+
+        <div class="flex hover:opacity-70 cursor-pointer">
+            <Linkedin />
+        </div>
     </div>
 </template>
 

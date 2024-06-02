@@ -7,7 +7,17 @@ export const translationMixin = {
         translateText() {
             const languageStore = useLanguageStore();
             const currentLanguage = computed(() => languageStore.getCurrentLanguage());
-            return (key) => translate(this.translationKeys[key], currentLanguage.value);
-        }
+            return (key, dynamicData = {}) => {
+                if (this.translationKeys) {
+                    if(this.translationKeys[key]){
+                        return translate(this.translationKeys[key], currentLanguage.value, dynamicData);
+                    }else{
+                        return translate(key, currentLanguage.value, dynamicData);
+                    }
+                } else {
+                    return translate(key, currentLanguage.value, dynamicData);
+                }
+            }
+        },
     }
 };

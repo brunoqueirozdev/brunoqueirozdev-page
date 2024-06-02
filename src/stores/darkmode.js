@@ -1,16 +1,29 @@
-import { ref } from 'vue'
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
+import { ref } from 'vue';
 
 export const useDarkmodeStore = defineStore('darkmode', () => {
-    const currentMode = ref('light')
+    const isDarkmode = ref(getDefaultValue());
 
-    function setMode(mode) {
-        currentMode.value = mode
+    function applyDarkModeClass() {
+        if (isDarkmode.value) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
     }
 
-    function getMode() {
-        return currentMode.value
+    function toggleDarkMode() {
+        isDarkmode.value = !isDarkmode.value;
+        applyDarkModeClass();
     }
 
-    return { setMode, getMode }
-})
+    function getDefaultValue() {
+        const date = new Date();
+        const hour = date.getHours();
+        return hour < 7 || hour > 18;
+    }
+
+    applyDarkModeClass();
+
+    return { isDarkmode, toggleDarkMode };
+});
