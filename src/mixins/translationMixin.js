@@ -6,7 +6,7 @@ export const translationMixin = {
     computed: {
         translateText() {
             const languageStore = useLanguageStore();
-            const currentLanguage = computed(() => languageStore.getCurrentLanguage());
+            const currentLanguage = computed(() => languageStore.getCurrentLanguage()).value;
             return (key, dynamicData = {}) => {
                 if (this.translationKeys) {
                     if(this.translationKeys[key]){

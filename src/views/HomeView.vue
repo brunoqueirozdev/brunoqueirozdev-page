@@ -1,27 +1,18 @@
 <template>
-    <Header />
 
-    <div class="m-4">
-        <main class="mt-10">
+    <div class="h-screen">
+        <Header />
+
+        <main class="h-[91%] flex justify-center items-center flex-col">
             <section>
                 <Presentation />
             </section>
 
-            <section class="mb-10">
+            <section class="w-full">
                 <SocialMedia />
-            </section>
-
-            <section>
-                <About />
-            </section>
-
-            <section>
-                <Projects />
             </section>
         </main>
     </div>
-
-    <Footer class="mt-10" />
 </template>
 
 <script>
