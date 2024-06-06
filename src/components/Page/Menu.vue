@@ -1,12 +1,17 @@
 <template>
     <div>
-      <i class="fa-solid fa-bars text-[1.5rem]" @click="toggleMenu"></i>
+      <div v-if="is_open" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur" @click="closeMenu"></div>
+      
+      <div class="fixed top-4 left-4 z-60">
+        <i v-if="!is_open" class="fa-solid fa-bars text-[1.5rem]" @click="this.is_open = true"></i>
+        <i v-else class="fa-solid fa-x text-[1.5rem]" @click="this.is_open = false"></i>
+      </div>
   
       <transition name="menu-transition">
         <div
           v-if="is_open"
           id="menu"
-          class="absolute top-14 left-0 w-[60%] h-[92%] z-50 bg-gray-100 dark:bg-dark-bg p-4 flex flex-col justify-between"
+          class="absolute top-14 left-0 xl:w-[10%] h-[92%] z-50 bg-gray-100 dark:bg-dark-bg p-4 flex flex-col justify-between"
         >
           <div class="flex">
             <ul class="flex flex-col gap-4">
@@ -21,16 +26,12 @@
               </li>
             </ul>
           </div>
-  
           <div class="flex justify-between h-8">
             <Language />
             <Darkmode />
           </div>
         </div>
       </transition>
-  
-      <!-- Adiciona um div para o efeito de blur -->
-      <div v-if="is_open" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur" @click="closeMenu"></div>
     </div>
   </template>
   
@@ -48,16 +49,6 @@
       };
     },
     methods: {
-      toggleMenu() {
-        this.is_open = !this.is_open;
-        if (this.is_open) {
-          document.addEventListener("click", this.handleClickOutside);
-          document.addEventListener("keydown", this.handleEscapeKey);
-        } else {
-          document.removeEventListener("click", this.handleClickOutside);
-          document.removeEventListener("keydown", this.handleEscapeKey);
-        }
-      },
       handleClickOutside(event) {
         if (!this.$el.contains(event.target)) {
           this.closeMenu();
@@ -97,6 +88,21 @@
   
   .backdrop-blur {
     backdrop-filter: blur(2px);
+    z-index: 40;
+  }
+  
+  .z-50 {
+    z-index: 50;
+  }
+  
+  .z-60 {
+    z-index: 60;
+  }
+  
+  .fixed.top-4.left-4 {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
   }
   </style>
   

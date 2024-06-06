@@ -1,6 +1,6 @@
 <template>
     <header :class="{ 'dark-mode': $darkmode.isDarkmode }" class="p-4">
-    <Menu />
+        <Menu />
     </header>
 </template>
 
