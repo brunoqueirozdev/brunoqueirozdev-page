@@ -2,7 +2,7 @@
     <div class="h-full">
         <Header />
 
-        <main class="flex justify-center items-center flex-col">
+        <main class="flex justify-center items-center flex-col h-screen">
             <section>
                 <Presentation />
             </section>
