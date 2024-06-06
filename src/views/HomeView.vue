@@ -1,14 +1,13 @@
 <template>
-
-    <div class="h-screen">
+    <div class="h-full">
         <Header />
 
-        <main class="h-[91%] flex justify-center items-center flex-col">
+        <main class="flex justify-center items-center flex-col">
             <section>
                 <Presentation />
             </section>
 
-            <section class="w-full">
+            <section class="sm:w-full md:w-[20%] ">
                 <SocialMedia />
             </section>
         </main>
