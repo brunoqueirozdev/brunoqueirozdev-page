@@ -9,7 +9,7 @@
 
         <transition name="menu-transition">
             <div v-if="is_open" id="menu"
-                class="absolute left-0 xl:w-[19%] pt-16 h-[100%] z-50 bg-gray-100 dark:bg-dark-bg p-4 flex flex-col justify-between">
+                class="absolute left-0 xl:w-[19%] pt-16 h-screen z-50 bg-gray-100 dark:bg-dark-bg p-4 flex flex-col justify-between">
                 <div class="flex">
                     <ul class="flex flex-col gap-4">
                         <li>
