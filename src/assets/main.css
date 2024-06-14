@@ -1,35 +1,30 @@
-@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+
+:root {
+    --background-light: #ffffff;
+    --text-color-light: #000000;
+    --background-dark: #1a202c;
+    --text-color-dark: #d3d3d3;
+    font-family: "Oxanium", sans-serif;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+body {
+    background-color: var(--background-light);
+    color: var(--text-color-light);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-color-dark);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.dark-mode {
+    background-color: #1a202c;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.dark-mode #menu {
+    background-color: #192336;
 }
