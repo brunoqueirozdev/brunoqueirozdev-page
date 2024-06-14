@@ -2,6 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
+    branches:
+      - main
     tags:
       - '*'
 
@@ -20,6 +22,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Print environment variables
+        run: printenv
+
+      - name: Print specific environment variable
+        run: echo $VUE_APP_GA_MEASUREMENT_ID
+        env:
+          VUE_APP_GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
 
       - name: Build project
         run: npm run build
