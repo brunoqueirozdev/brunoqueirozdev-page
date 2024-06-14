@@ -2,8 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - develop
+    tags:
+      - '*'
 
 jobs:
   build-and-deploy:
@@ -31,3 +31,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages
