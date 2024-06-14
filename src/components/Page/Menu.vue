@@ -24,9 +24,9 @@
                     </ul>
                 </div>
                 <div class="flex justify-between h-8">
-          <Language />
-          <Darkmode />
-        </div>
+                    <Language />
+                    <Darkmode />
+                </div>
             </div>
         </transition>
     </div>

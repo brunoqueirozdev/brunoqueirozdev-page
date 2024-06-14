@@ -13,6 +13,8 @@ import { faUser, faClock } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faUser, faClock);
 
+import VueGtag from "vue-gtag";
+
 const app = createApp(App)
 
 import globalTranslate from '@/globals/translate';
@@ -25,5 +27,9 @@ app.use(globalTranslate);
 app.use(globalAboutme);
 app.use(globalDarkmode);
 app.component('font-awesome-icon', FontAwesomeIcon)
+
+app.use(VueGtag, {
+    config: { id: process.env.GA_MEASUREMENT_ID }
+});
 
 app.mount('#app')
