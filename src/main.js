@@ -29,6 +29,7 @@ app.use(globalDarkmode);
 app.component('font-awesome-icon', FontAwesomeIcon)
 
 app.use(VueGtag, {
+    pageTrackerScreenviewEnabled: true,
     config: { id: 'G-TTC73PKMCX' }
 });
 

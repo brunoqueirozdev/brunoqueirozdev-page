@@ -5,5 +5,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+    methods: {
+        track() {
+            this.$gtag.event('click_whatsapp', {
+                'event_label': 'Whatsapp click'
+            })
+        }
+    }
+}
 </script>
