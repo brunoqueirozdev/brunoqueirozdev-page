@@ -1,5 +1,5 @@
 <template>
-    <a :href="$aboutme('whatsapp')">
+    <a :href="$aboutme('whatsapp')" @click="track">
         <i class="fa-brands fa-whatsapp" />
     </a>
 </template>
