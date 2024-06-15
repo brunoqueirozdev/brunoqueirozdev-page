@@ -3,7 +3,7 @@
         <div v-if="is_open" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur" @click="closeMenu"></div>
 
         <div class="fixed top-4 left-4 z-60">
-            <i v-if="!is_open" class="fa-solid fa-bars text-[1.5rem]" @click="this.is_open = true"></i>
+            <i v-if="!is_open" class="fa-solid fa-bars text-[1.5rem]" @click="openMenu"></i>
             <i v-else class="fa-solid fa-x text-[1.5rem]" @click="this.is_open = false"></i>
         </div>
 
@@ -19,7 +19,7 @@
                             <span>Experience</span>
                         </li>
                         <li>
-                            <span>Projects</span>
+                            <RouterLink to="/projects"> Projects </RouterLink>
                         </li>
                     </ul>
                 </div>
@@ -46,6 +46,13 @@ export default {
         };
     },
     methods: {
+        openMenu() {
+            this.is_open = true;
+            this.$gtag.event('open_menu', {
+                'event_label': 'Open menu',
+                'value': new Date()
+            })
+        },
         handleClickOutside(event) {
             if (!this.$el.contains(event.target)) {
                 this.closeMenu();
@@ -60,6 +67,10 @@ export default {
             this.is_open = false;
             document.removeEventListener("click", this.handleClickOutside);
             document.removeEventListener("keydown", this.handleEscapeKey);
+            this.$gtag.event('close_menu', {
+                'event_label': 'Close menu',
+                'value': new Date()
+            })
         },
     },
 };

@@ -11,6 +11,10 @@
     computed: {
       currentLanguage() {
         const lang = useLanguageStore().getCurrentLanguage();
+        this.$gtag.event('switch_language', {
+                'event_label': 'Switch language click',
+                'value': lang.value
+            })
         return lang;
       }
     },

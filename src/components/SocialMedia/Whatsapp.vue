@@ -9,7 +9,8 @@ export default {
     methods: {
         track() {
             this.$gtag.event('click_whatsapp', {
-                'event_label': 'Whatsapp click'
+                'event_label': 'Whatsapp click',
+                'value': new Date()
             })
         }
     }

@@ -31,6 +31,9 @@ export default {
         Presentation,
         Projects,
         SocialMedia
+    },
+    mounted() {
+        this.$gtag.pageview({ page_path: '/home' })
     }
 }
 </script>
