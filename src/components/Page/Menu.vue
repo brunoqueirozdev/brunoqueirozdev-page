@@ -19,7 +19,7 @@
                             <span>Experience</span>
                         </li>
                         <li>
-                            <RouterLink to="/projects"> Projects </RouterLink>
+                            <span>Projects</span>
                         </li>
                     </ul>
                 </div>
