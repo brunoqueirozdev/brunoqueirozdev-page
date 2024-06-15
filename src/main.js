@@ -27,9 +27,9 @@ app.use(globalTranslate);
 app.use(globalAboutme);
 app.use(globalDarkmode);
 app.component('font-awesome-icon', FontAwesomeIcon)
-console.log(process.env.VUE_APP_GA_MEASUREMENT_ID);
+
 app.use(VueGtag, {
-    config: { id: process.env.GA_MEASUREMENT_ID }
+    config: { id: 'G-TTC73PKMCX' }
 });
 
 app.mount('#app')
